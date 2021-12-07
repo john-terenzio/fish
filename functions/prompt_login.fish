@@ -21,7 +21,7 @@ function prompt_login --description "Print a description of the user and host su
 
     # If we're running via SSH or another shell, change the host color.
     set -l color_host $fish_color_host
-    if test $SHLVL -gt 1
+    if test $SHLVL -gt (test $TMUX; and echo -n 2; or echo -n 1)
         set color_host purple
     else if set -q SSH_TTY; and set -q fish_color_host_remote
         set color_host $fish_color_host_remote

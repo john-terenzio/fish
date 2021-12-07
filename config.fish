@@ -11,7 +11,7 @@ test -d "$HOME/.local/bin"; and fish_add_path "$HOME/.local/bin"
 status is-interactive; or exit
 
 # Press \cd twice to exit final shell
-if test $SHLVL -eq 1
+if test $SHLVL -eq (test $TMUX; and echo -n 2; or echo -n 1)
   bind \cd true
   bind \cd\cd exit
 end
