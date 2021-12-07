@@ -4,6 +4,7 @@ if test -d /opt/go/bin
   fish_add_path /opt/go/bin
   fish_add_path "$GOPATH/bin"
 end
+test -d /opt/protoc/bin; and fish_add_path /opt/protoc/bin
 test -d /opt/ruby/bin; and fish_add_path /opt/ruby/bin
 test -d "$HOME/.local/bin"; and fish_add_path "$HOME/.local/bin"
 
