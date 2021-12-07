@@ -1,5 +1,9 @@
 # Additional paths
-test -d /opt/go/bin; and fish_add_path /opt/go/bin
+if test -d /opt/go/bin
+  set -gx GOPATH "$HOME/.go"
+  fish_add_path /opt/go/bin
+  fish_add_path "$GOPATH/bin"
+end
 test -d /opt/ruby/bin; and fish_add_path /opt/ruby/bin
 test -d "$HOME/.local/bin"; and fish_add_path "$HOME/.local/bin"
 
