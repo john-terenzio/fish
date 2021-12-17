@@ -2,9 +2,28 @@ status is-interactive; or exit
 type -q gpg-agent; or exit
 not set -q SSH_TTY; or exit
 
-if not set -q gnupg_SSH_AUTH_SOCK_by
-  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -gx GPG_TTY (tty)
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+
+function gpg-set-tty
+  if test "$fish_gpg_tty" != "$GPG_TTY"
+    gpg-connect-agent updatestartuptty /bye > /dev/null
+    set -U fish_gpg_tty $GPG_TTY
+  end
+end
+gpg-set-tty
+
+function git
+  gpg-set-tty
+  command git $argv
 end
 
-set -gx GPG_TTY (tty)
-gpg-connect-agent updatestartuptty /bye > /dev/null
+function gpg
+  gpg-set-tty
+  command gpg $argv
+end
+
+function ssh
+  gpg-set-tty
+  command ssh $argv
+end
