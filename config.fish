@@ -4,6 +4,7 @@ if test -d /opt/go/bin
   fish_add_path /opt/go/bin
   fish_add_path "$GOPATH/bin"
 end
+test -d /opt/python3/bin; and fish_add_path /opt/python3/bin
 test -d /opt/ruby/bin; and fish_add_path /opt/ruby/bin
 test -d "$HOME/.local/bin"; and fish_add_path "$HOME/.local/bin"
 
@@ -21,6 +22,7 @@ alias cp="cp -r"
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME/"
 alias ip="curl https://terenz.io/ip.txt"
 # ls is defined in conf.d/ls.fish
+alias python="python3"
 alias scp="scp -rp"
 alias tmux="tmux -f $HOME/.tmux/tmux.conf"
 alias xxd="xxd -g 1"
