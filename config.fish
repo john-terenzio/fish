@@ -24,5 +24,5 @@ alias xxd="xxd -g 1"
 # Environment variables
 set -gx fish_greeting
 set -gx EDITOR vi
-set -gx LESS RS
+set -gx LESS "RS --mouse --wheel-lines=3"
 set -gx LESSHISTFILE /dev/null
