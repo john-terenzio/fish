@@ -1,6 +1,7 @@
 # Paths
 fish_add_path -m /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 test -d "/opt/go/bin"; and fish_add_path -m "/opt/go/bin"
+test -d "/opt/homebrew/bin"; and fish_add_path -m "/opt/homebrew/bin"
 test -d "$HOME/.local/bin"; and fish_add_path -m "$HOME/.local/bin"
 
 # Interactive-only below
