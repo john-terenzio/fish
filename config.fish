@@ -17,6 +17,7 @@ alias cp="cp -r"
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME/"
 alias ip="curl https://terenz.io/ip.txt"
 # ls is defined in conf.d/ls.fish
+alias pip="pip3"
 alias python="python3"
 alias scp="scp -rp"
 alias tmux="tmux -f $HOME/.tmux/tmux.conf"
